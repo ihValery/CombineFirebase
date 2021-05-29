@@ -11,6 +11,13 @@
 		807C9A352662B31D006847C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A342662B31D006847C2 /* ContentView.swift */; };
 		807C9A372662B321006847C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 807C9A362662B321006847C2 /* Assets.xcassets */; };
 		807C9A3A2662B321006847C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 807C9A392662B321006847C2 /* Preview Assets.xcassets */; };
+		807C9A472662B9BD006847C2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A462662B9BD006847C2 /* Color.swift */; };
+		807C9A4E2662B9EB006847C2 /* BackgroundAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A482662B9EA006847C2 /* BackgroundAnimation.swift */; };
+		807C9A4F2662B9EB006847C2 /* AnketaSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A492662B9EA006847C2 /* AnketaSignIn.swift */; };
+		807C9A502662B9EB006847C2 /* SignSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A4A2662B9EA006847C2 /* SignSelectButton.swift */; };
+		807C9A512662B9EB006847C2 /* AnketaSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A4B2662B9EB006847C2 /* AnketaSignUp.swift */; };
+		807C9A522662B9EB006847C2 /* SignStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A4C2662B9EB006847C2 /* SignStyleButton.swift */; };
+		807C9A532662B9EB006847C2 /* BackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A4D2662B9EB006847C2 /* BackgroundCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +27,13 @@
 		807C9A362662B321006847C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		807C9A392662B321006847C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		807C9A3B2662B321006847C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		807C9A462662B9BD006847C2 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		807C9A482662B9EA006847C2 /* BackgroundAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundAnimation.swift; sourceTree = "<group>"; };
+		807C9A492662B9EA006847C2 /* AnketaSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnketaSignIn.swift; sourceTree = "<group>"; };
+		807C9A4A2662B9EA006847C2 /* SignSelectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSelectButton.swift; sourceTree = "<group>"; };
+		807C9A4B2662B9EB006847C2 /* AnketaSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnketaSignUp.swift; sourceTree = "<group>"; };
+		807C9A4C2662B9EB006847C2 /* SignStyleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignStyleButton.swift; sourceTree = "<group>"; };
+		807C9A4D2662B9EB006847C2 /* BackgroundCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				807C9A322662B31D006847C2 /* CombineFirebaseApp.swift */,
-				807C9A342662B31D006847C2 /* ContentView.swift */,
-				807C9A362662B321006847C2 /* Assets.xcassets */,
-				807C9A3B2662B321006847C2 /* Info.plist */,
-				807C9A382662B321006847C2 /* Preview Content */,
+				807C9A432662B94B006847C2 /* Model */,
+				807C9A442662B952006847C2 /* ViewModel */,
+				807C9A422662B93D006847C2 /* View */,
+				807C9A452662B9A4006847C2 /* Extension */,
+				807C9A412662B480006847C2 /* System32 */,
 			);
 			path = CombineFirebase;
 			sourceTree = "<group>";
@@ -67,6 +82,52 @@
 				807C9A392662B321006847C2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		807C9A412662B480006847C2 /* System32 */ = {
+			isa = PBXGroup;
+			children = (
+				807C9A362662B321006847C2 /* Assets.xcassets */,
+				807C9A3B2662B321006847C2 /* Info.plist */,
+				807C9A382662B321006847C2 /* Preview Content */,
+			);
+			path = System32;
+			sourceTree = "<group>";
+		};
+		807C9A422662B93D006847C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				807C9A342662B31D006847C2 /* ContentView.swift */,
+				807C9A492662B9EA006847C2 /* AnketaSignIn.swift */,
+				807C9A4B2662B9EB006847C2 /* AnketaSignUp.swift */,
+				807C9A482662B9EA006847C2 /* BackgroundAnimation.swift */,
+				807C9A4D2662B9EB006847C2 /* BackgroundCard.swift */,
+				807C9A4A2662B9EA006847C2 /* SignSelectButton.swift */,
+				807C9A4C2662B9EB006847C2 /* SignStyleButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		807C9A432662B94B006847C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		807C9A442662B952006847C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		807C9A452662B9A4006847C2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				807C9A462662B9BD006847C2 /* Color.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				807C9A512662B9EB006847C2 /* AnketaSignUp.swift in Sources */,
+				807C9A502662B9EB006847C2 /* SignSelectButton.swift in Sources */,
+				807C9A4E2662B9EB006847C2 /* BackgroundAnimation.swift in Sources */,
 				807C9A352662B31D006847C2 /* ContentView.swift in Sources */,
+				807C9A532662B9EB006847C2 /* BackgroundCard.swift in Sources */,
 				807C9A332662B31D006847C2 /* CombineFirebaseApp.swift in Sources */,
+				807C9A4F2662B9EB006847C2 /* AnketaSignIn.swift in Sources */,
+				807C9A522662B9EB006847C2 /* SignStyleButton.swift in Sources */,
+				807C9A472662B9BD006847C2 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +336,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"CombineFirebase/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CombineFirebase/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = CombineFirebase/Info.plist;
+				INFOPLIST_FILE = CombineFirebase/System32/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -290,10 +358,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"CombineFirebase/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CombineFirebase/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = CombineFirebase/Info.plist;
+				INFOPLIST_FILE = CombineFirebase/System32/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
