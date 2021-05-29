@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct AnketaSignUp: View {
-    @State var name: String = ""
-    @State var email: String = ""
-    @State var password: String = ""
-    @State var rePassword: String = ""
+    @ObservedObject private var userViewModel = UserViewModel.shared
+    
+//    @State var name: String = ""
+//    @State var email: String = ""
+//    @State var password: String = ""
+//    @State var rePassword: String = ""
     
     @State private var showPassword = false
     
@@ -22,8 +24,8 @@ struct AnketaSignUp: View {
                 Image(systemName: "person.fill").padding(.leading, 3).padding(.trailing, 2)
                 
                 ZStack(alignment: .leading) {
-                    if name.isEmpty { Text("Введите имя").opacity(0.7) }
-                    TextField("", text: $name)
+                    if userViewModel.username.isEmpty { Text("Введите имя").opacity(0.7) }
+                    TextField("", text: $userViewModel.username)
                 }
             }
             Line()
@@ -32,8 +34,8 @@ struct AnketaSignUp: View {
                 Image(systemName: "envelope.fill")
                 
                 ZStack(alignment: .leading) {
-                    if email.isEmpty { Text("Укажите почту").opacity(0.7) }
-                    TextField("", text: $email)
+                    if userViewModel.email.isEmpty { Text("Укажите почту").opacity(0.7) }
+                    TextField("", text: $userViewModel.email)
                 }
             }
             Line()
@@ -44,12 +46,12 @@ struct AnketaSignUp: View {
                 ZStack(alignment: .trailing) {
                     if showPassword {
                         ZStack {
-                            TextField("", text: $password)
+                            TextField("", text: $userViewModel.password)
                         }
                     } else {
                         ZStack(alignment: .leading) {
-                            if password.isEmpty { Text("Придумайте пароль").opacity(0.7) }
-                            SecureField("", text: $password)
+                            if userViewModel.password.isEmpty { Text("Придумайте пароль").opacity(0.7) }
+                            SecureField("", text: $userViewModel.password)
                         }
                     }
                     Button(action: { self.showPassword.toggle()}) {
@@ -63,8 +65,8 @@ struct AnketaSignUp: View {
                 Image(systemName: "lock.fill").padding(.leading, 3).padding(.trailing, 2)
                 
                 ZStack (alignment: .leading) {
-                    if rePassword.isEmpty { Text("Повторите пароль").opacity(0.7) }
-                    SecureField("", text: $rePassword)
+                    if userViewModel.passwordAgain.isEmpty { Text("Повторите пароль").opacity(0.7) }
+                    SecureField("", text: $userViewModel.passwordAgain)
                 }
             }
             Line()

@@ -18,6 +18,8 @@
 		807C9A512662B9EB006847C2 /* AnketaSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A4B2662B9EB006847C2 /* AnketaSignUp.swift */; };
 		807C9A522662B9EB006847C2 /* SignStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A4C2662B9EB006847C2 /* SignStyleButton.swift */; };
 		807C9A532662B9EB006847C2 /* BackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A4D2662B9EB006847C2 /* BackgroundCard.swift */; };
+		807C9A572662DCE2006847C2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A562662DCE2006847C2 /* UserViewModel.swift */; };
+		807C9A592662E929006847C2 /* TESTremoveTEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A582662E929006847C2 /* TESTremoveTEST.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		807C9A4B2662B9EB006847C2 /* AnketaSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnketaSignUp.swift; sourceTree = "<group>"; };
 		807C9A4C2662B9EB006847C2 /* SignStyleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignStyleButton.swift; sourceTree = "<group>"; };
 		807C9A4D2662B9EB006847C2 /* BackgroundCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundCard.swift; sourceTree = "<group>"; };
+		807C9A562662DCE2006847C2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		807C9A582662E929006847C2 /* TESTremoveTEST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TESTremoveTEST.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				807C9A322662B31D006847C2 /* CombineFirebaseApp.swift */,
+				807C9A582662E929006847C2 /* TESTremoveTEST.swift */,
 				807C9A432662B94B006847C2 /* Model */,
 				807C9A442662B952006847C2 /* ViewModel */,
 				807C9A422662B93D006847C2 /* View */,
@@ -118,6 +123,7 @@
 		807C9A442662B952006847C2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				807C9A562662DCE2006847C2 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -202,7 +208,9 @@
 				807C9A512662B9EB006847C2 /* AnketaSignUp.swift in Sources */,
 				807C9A502662B9EB006847C2 /* SignSelectButton.swift in Sources */,
 				807C9A4E2662B9EB006847C2 /* BackgroundAnimation.swift in Sources */,
+				807C9A572662DCE2006847C2 /* UserViewModel.swift in Sources */,
 				807C9A352662B31D006847C2 /* ContentView.swift in Sources */,
+				807C9A592662E929006847C2 /* TESTremoveTEST.swift in Sources */,
 				807C9A532662B9EB006847C2 /* BackgroundCard.swift in Sources */,
 				807C9A332662B31D006847C2 /* CombineFirebaseApp.swift in Sources */,
 				807C9A4F2662B9EB006847C2 /* AnketaSignIn.swift in Sources */,

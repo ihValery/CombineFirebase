@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var signInSelected = false
-    @State private var signUpSelected = true
+    @State private var signInSelected = true
+    @State private var signUpSelected = false
     //    @State private var isOnScreeen = false
     @State private var isTap = false
+    @ObservedObject private var userViewModel = UserViewModel.shared
     
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.orangeGradientStart, .orangeGradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
-            BackgroundAnimation()
-                .drawingGroup()
-                .ignoresSafeArea()
+//            BackgroundAnimation()
+//                .drawingGroup()
+//                .ignoresSafeArea()
             
             VStack {
                 HStack(spacing: 1) {
@@ -46,11 +47,13 @@ struct ContentView: View {
                             .offset(y: gr.size.height / 4.5)
                             .offset(x: signInSelected ? 0 : gr.size.width + 50)
                         
-                        Button("Зарегистрироваться") {
+                        Button(self.userViewModel.isValidPassword ? "Зарегистрироваться" : "Заполните все поля") {
                             print("--------Зарегистрироваться--------")
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white, colorText: .orangeGradientEnd))
                         .offset(y: signInSelected ? 230 : gr.size.height + 50)
+                        .disabled(!self.userViewModel.isValidPassword)
+                        .opacity(self.userViewModel.isValidPassword ? 1 : 0.7)
                     }
                     
                     VStack {
