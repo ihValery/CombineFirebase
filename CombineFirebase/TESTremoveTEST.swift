@@ -8,17 +8,17 @@
 //import SwiftUI
 //
 //struct TESTremoveTEST: View {
-//    @ObservedObject private var userViewModel = UserViewModel()
+//    @ObservedObject private var signUpViewModel = SignUpViewModel()
 //    
 //    var body: some View {
 //        Form {
 //            Section() {
-//                TextField("Username", text: $userViewModel.username)
+//                TextField("Username", text: $signUpViewModel.username)
 //                    .autocapitalization(.none)
 //            }
 //            Section() {
 //                Button(action: {}) {
-//                    Text(self.userViewModel.isValidPassword ? "Зарегистрироваться" : "Заполните все поля")
+//                    Text(self.signUpViewModel.isValidPassword ? "Зарегистрироваться" : "Заполните все поля")
 //                }
 //                .disabled(!self.userViewModel.isValidPassword)
 //            }

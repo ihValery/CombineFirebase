@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AnketaSignIn: View {
-    @State var email: String = ""
-    @State var password: String = ""
+    @ObservedObject private var signUpViewModel = SignUpViewModel.shared
+    
+//    @State var email: String = ""
+//    @State var password: String = ""
     @State private var showPassword = false
     
     var body: some View {
@@ -19,8 +21,8 @@ struct AnketaSignIn: View {
                 Image(systemName: "envelope.fill")
                 
                 ZStack(alignment: .leading) {
-                    if email.isEmpty { Text("Введите почту").opacity(0.7) }
-                    TextField("", text: $email)
+                    if signUpViewModel.email.isEmpty { Text("Введите почту").opacity(0.7) }
+                    TextField("", text: $signUpViewModel.email)
                 }
             }
             Line()
@@ -31,12 +33,12 @@ struct AnketaSignIn: View {
                 ZStack(alignment: .trailing) {
                     if showPassword {
                         ZStack {
-                            TextField("", text: $password)
+                            TextField("", text: $signUpViewModel.passwordSignIn)
                         }
                     } else {
                         ZStack(alignment: .leading) {
-                            if password.isEmpty { Text("Введите пароль").opacity(0.7) }
-                            SecureField("", text: $password)
+                            if signUpViewModel.passwordSignIn.isEmpty { Text("Введите пароль").opacity(0.7) }
+                            SecureField("", text: $signUpViewModel.passwordSignIn)
                         }
                     }
                     Button(action: { self.showPassword.toggle()}) {
