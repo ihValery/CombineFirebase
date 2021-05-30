@@ -47,13 +47,12 @@ struct ContentView: View {
                             .offset(y: gr.size.height / 4.5)
                             .offset(x: signInSelected ? 0 : gr.size.width + 50)
                         
-                        Button(self.userViewModel.isValidPassword ? "Зарегистрироваться" : "Заполните все поля") {
+                        Button(self.userViewModel.isValid ? "Зарегистрироваться" : "Заполните все поля") {
                             print("--------Зарегистрироваться--------")
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white, colorText: .orangeGradientEnd))
                         .offset(y: signInSelected ? 230 : gr.size.height + 50)
-                        .disabled(!self.userViewModel.isValidPassword)
-                        .opacity(self.userViewModel.isValidPassword ? 1 : 0.7)
+                        .disabled(!self.userViewModel.isValid)
                     }
                     
                     VStack {

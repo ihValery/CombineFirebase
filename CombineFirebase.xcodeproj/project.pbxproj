@@ -20,6 +20,7 @@
 		807C9A532662B9EB006847C2 /* BackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A4D2662B9EB006847C2 /* BackgroundCard.swift */; };
 		807C9A572662DCE2006847C2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A562662DCE2006847C2 /* UserViewModel.swift */; };
 		807C9A592662E929006847C2 /* TESTremoveTEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A582662E929006847C2 /* TESTremoveTEST.swift */; };
+		807C9A5B2662FEED006847C2 /* PasswordCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C9A5A2662FEED006847C2 /* PasswordCheck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		807C9A4D2662B9EB006847C2 /* BackgroundCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundCard.swift; sourceTree = "<group>"; };
 		807C9A562662DCE2006847C2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		807C9A582662E929006847C2 /* TESTremoveTEST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TESTremoveTEST.swift; sourceTree = "<group>"; };
+		807C9A5A2662FEED006847C2 /* PasswordCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,8 @@
 				807C9A342662B31D006847C2 /* ContentView.swift */,
 				807C9A492662B9EA006847C2 /* AnketaSignIn.swift */,
 				807C9A4B2662B9EB006847C2 /* AnketaSignUp.swift */,
-				807C9A482662B9EA006847C2 /* BackgroundAnimation.swift */,
 				807C9A4D2662B9EB006847C2 /* BackgroundCard.swift */,
+				807C9A482662B9EA006847C2 /* BackgroundAnimation.swift */,
 				807C9A4A2662B9EA006847C2 /* SignSelectButton.swift */,
 				807C9A4C2662B9EB006847C2 /* SignStyleButton.swift */,
 			);
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				807C9A562662DCE2006847C2 /* UserViewModel.swift */,
+				807C9A5A2662FEED006847C2 /* PasswordCheck.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				807C9A512662B9EB006847C2 /* AnketaSignUp.swift in Sources */,
 				807C9A502662B9EB006847C2 /* SignSelectButton.swift in Sources */,
 				807C9A4E2662B9EB006847C2 /* BackgroundAnimation.swift in Sources */,
+				807C9A5B2662FEED006847C2 /* PasswordCheck.swift in Sources */,
 				807C9A572662DCE2006847C2 /* UserViewModel.swift in Sources */,
 				807C9A352662B31D006847C2 /* ContentView.swift in Sources */,
 				807C9A592662E929006847C2 /* TESTremoveTEST.swift in Sources */,
