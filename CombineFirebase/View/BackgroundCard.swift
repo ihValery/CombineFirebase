@@ -8,22 +8,35 @@
 import SwiftUI
 
 struct BackgroundCard: View {
+    @ObservedObject private var userViewModel = UserViewModel.shared
+//    @Binding var selectedMenu: Bool
     var height: CGFloat
     
     var body: some View {
         ZStack {
+//            //Delete
+//            Color.orange
+            
             RoundedRectangle(cornerRadius: 7)
                 .fill(Color.white).opacity(0.6)
+                .overlay(
+                    VStack {
+                          Spacer()
+                        Text(userViewModel.messageError)
+                            .foregroundColor(.gray)
+                            .font(.footnote)
+                            .padding(.bottom, 10)
+                    })
                 .frame(height: height)
-                .offset(y: 20.0)
+                .offset(y: userViewModel.messageError.isEmpty ? 20 : 50)
                 .padding(.horizontal, 30)
             
             RoundedRectangle(cornerRadius: 7)
                 .fill(Color.white).opacity(0.6)
                 .frame(height: height)
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 5)
-                .offset(y: 10.0)
-                .padding(.horizontal, 15)           
+                .offset(y: 10)
+                .padding(.horizontal, 15)
             
             RoundedRectangle(cornerRadius: 7)
                 .fill(Color.white)

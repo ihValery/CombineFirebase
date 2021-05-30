@@ -70,6 +70,11 @@ struct AnketaSignUp: View {
                 }
             }
             Line()
+//            ZStack {
+//                Text(userViewModel.usernameMessage)
+//                Text(userViewModel.passwordMessage)
+//            }
+//            .foregroundColor(.gray).font(.subheadline)
         }
         .textFieldStyle(DefaultTextFieldStyle())
         .font(.title2)
