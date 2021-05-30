@@ -1,5 +1,5 @@
 //
-//  UserViewModel.swift
+//  SignUpViewModel.swift
 //  CombineFirebase
 //
 //  Created by Валерий Игнатьев on 29.05.21.
@@ -8,17 +8,19 @@
 import Combine
 import Foundation
 
-class UserViewModel: ObservableObject {
-    static let shared = UserViewModel()
+class SignUpViewModel: ObservableObject {
+    static let shared = SignUpViewModel()
     
     //input
     @Published var username = ""
     @Published var email = ""
+    @Published var passwordSignIn = ""
     @Published var password = ""
     @Published var passwordAgain = ""
     
     //output
     @Published var isValid = false
+    @Published var isValidSignIn = false
     
     @Published var messageError = ""
     
@@ -72,13 +74,6 @@ class UserViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    enum PasswordCheck {
-        case notEmpty
-        case notStrong
-        case notMatch
-        case valid
-    }
-    
     private var isPasswordValidPublisher: AnyPublisher<PasswordCheck, Never> {
         Publishers.CombineLatest3(isPasswordEmptyPublisher, isPasswordStrongPublisher, arePasswordEqualPublisher)
             .map {
@@ -96,6 +91,21 @@ class UserViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
+    private var isPasswordSignInEmptyPublisher: AnyPublisher<Bool, Never> {
+        $passwordSignIn
+            .debounce(for: 0.2, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .map { $0.count > 6 }
+            .eraseToAnyPublisher()
+    }
+    
+    private var isValidSignInPublisher: AnyPublisher<Bool , Never> {
+        Publishers.CombineLatest(isEmailValidPublisher, isPasswordSignInEmptyPublisher)
+            .map { $0 && $1 }
+            .eraseToAnyPublisher()
+    }
+    
+    
     private init() {
         isUsernameValidPublisher
             .dropFirst()
@@ -108,6 +118,13 @@ class UserViewModel: ObservableObject {
             .dropFirst()
             .receive(on: RunLoop.main)
             .map { $0 ? "" : "Емаил не корректный" }
+            .assign(to: \.messageError, on: self)
+            .store(in: &cancellableSet)
+        
+        isPasswordSignInEmptyPublisher
+            .dropFirst()
+            .receive(on: RunLoop.main)
+            .map { $0 ? "" : "Пароль не достаточной длины" }
             .assign(to: \.messageError, on: self)
             .store(in: &cancellableSet)
         
@@ -130,6 +147,12 @@ class UserViewModel: ObservableObject {
             //Поскольку этот код взаимодействует с UI, он должен работать на main потоке
             .receive(on: RunLoop.main)
             .assign(to: \.isValid, on: self)
+            .store(in: &cancellableSet)
+        
+        isValidSignInPublisher
+            .dropFirst()
+            .receive(on: RunLoop.main)
+            .assign(to: \.isValidSignIn, on: self)
             .store(in: &cancellableSet)
     }
 }

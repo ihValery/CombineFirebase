@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct BackgroundCard: View {
-    @ObservedObject private var userViewModel = UserViewModel.shared
-//    @Binding var selectedMenu: Bool
+    @ObservedObject private var signUpViewModel = SignUpViewModel.shared
+//    @Binding var selectedSignUp: Bool
     var height: CGFloat
     
     var body: some View {
@@ -22,13 +22,13 @@ struct BackgroundCard: View {
                 .overlay(
                     VStack {
                           Spacer()
-                        Text(userViewModel.messageError)
+                        Text(signUpViewModel.messageError)
                             .foregroundColor(.gray)
                             .font(.footnote)
                             .padding(.bottom, 10)
                     })
                 .frame(height: height)
-                .offset(y: userViewModel.messageError.isEmpty ? 20 : 50)
+                .offset(y: signUpViewModel.messageError.isEmpty ? 20 : 50)
                 .padding(.horizontal, 30)
             
             RoundedRectangle(cornerRadius: 7)

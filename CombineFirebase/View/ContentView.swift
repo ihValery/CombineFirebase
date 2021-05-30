@@ -10,9 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var signInSelected = true
     @State private var signUpSelected = false
-    //    @State private var isOnScreeen = false
+    @State private var presentAlert = false
     @State private var isTap = false
-    @ObservedObject private var userViewModel = UserViewModel.shared
+    
+    @ObservedObject private var signUpViewModel = SignUpViewModel.shared
+    
     
     var body: some View {
         ZStack {
@@ -47,12 +49,13 @@ struct ContentView: View {
                             .offset(y: gr.size.height / 4.5)
                             .offset(x: signInSelected ? 0 : gr.size.width + 50)
                         
-                        Button(self.userViewModel.isValid ? "Зарегистрироваться" : "Заполните все поля") {
+                        Button(self.signUpViewModel.isValid ? "Зарегистрироваться" : "Заполните все поля") {
+                            signUp()
                             print("--------Зарегистрироваться--------")
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white, colorText: .orangeGradientEnd))
                         .offset(y: signInSelected ? 230 : gr.size.height + 50)
-                        .disabled(!self.userViewModel.isValid)
+                        .disabled(!signUpViewModel.isValid)
                     }
                     
                     VStack {
@@ -61,19 +64,36 @@ struct ContentView: View {
                             .offset(y: gr.size.height / 3.5)
                             .offset(x: signUpSelected ? 0 : -gr.size.width - 50)
                         
-                        Button("Войти") {
+                        Button(signUpViewModel.isValidSignIn ? "Войти" : "Заполните все поля") {
+                            signUp()
                             print("--------Войти--------")
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white, colorText: .orangeGradientEnd))
                         .offset(y: signUpSelected ? 340 : gr.size.height + 150)
+                        .disabled(!signUpViewModel.isValidSignIn)
                     }
                 }
                 .animation(.easeInOut)
             }
         }
+        .sheet(isPresented: $presentAlert, content: {
+            WelcomView()
+        })
+    }
+    func signUp() {
+        presentAlert = true
     }
 }
 
+struct WelcomView: View {
+    var body: some View {
+        ZStack {
+            Color.green.ignoresSafeArea()
+            Text("Welcom! Greate to have you on board!")
+                .font(.largeTitle)
+        }
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,9 +7,9 @@
 
 import Foundation
 
-//enum PasswordCheck {
-//    case valid
-//    case empty
-//    case noMatch
-//    case notStrong
-//}
+enum PasswordCheck {
+    case notEmpty
+    case notStrong
+    case notMatch
+    case valid
+}
