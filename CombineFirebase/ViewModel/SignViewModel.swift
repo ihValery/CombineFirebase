@@ -1,5 +1,5 @@
 //
-//  SignUpViewModel.swift
+//  SignViewModel.swift
 //  CombineFirebase
 //
 //  Created by Валерий Игнатьев on 29.05.21.
@@ -8,19 +8,20 @@
 import Combine
 import Foundation
 
-class SignUpViewModel: ObservableObject {
-    static let shared = SignUpViewModel()
+class SignViewModel: ObservableObject {
+    static let shared = SignViewModel()
     
     //input
     @Published var username = ""
     @Published var email = ""
     @Published var passwordSignIn = ""
+    
     @Published var password = ""
     @Published var passwordAgain = ""
     
     //output
-    @Published var isValid = false
     @Published var isValidSignIn = false
+    @Published var isValidSignUp = false
     
     @Published var messageError = ""
     
@@ -85,7 +86,7 @@ class SignUpViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    private var isValidPublisher: AnyPublisher<Bool , Never> {
+    private var isValidSignUpPublisher: AnyPublisher<Bool , Never> {
         Publishers.CombineLatest3(isUsernameValidPublisher, isEmailValidPublisher, isPasswordValidPublisher)
             .map { $0 && $1 && $2 == .valid }
             .eraseToAnyPublisher()
@@ -142,11 +143,11 @@ class SignUpViewModel: ObservableObject {
             .assign(to: \.messageError, on: self)
             .store(in: &cancellableSet)
         
-        isValidPublisher
+        isValidSignUpPublisher
             .dropFirst()
             //Поскольку этот код взаимодействует с UI, он должен работать на main потоке
             .receive(on: RunLoop.main)
-            .assign(to: \.isValid, on: self)
+            .assign(to: \.isValidSignUp, on: self)
             .store(in: &cancellableSet)
         
         isValidSignInPublisher
